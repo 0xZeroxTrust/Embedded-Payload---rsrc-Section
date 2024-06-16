@@ -54,7 +54,7 @@ int WriteBufferToFile(const char* filePath, BYTE* buffer, SIZE_T bufferSize) {
 
 int main() {
     // File path of the payload
-    const char* filePath = "encrypted_payload.ico";  // Replace with your file path
+    const char* filePath = "file.bin";  // Replace with your file path
 
     // Read the file into a buffer
     SIZE_T payloadSize = 0;
@@ -70,7 +70,7 @@ int main() {
     XorByOneKey(payload, payloadSize, encryptionKey);
 
     // Save the encrypted payload back to a file
-    const char* encryptedFilePath = "encrypted_payload.bin";  // Output file path
+    const char* encryptedFilePath = "encrypted_payload.ico";  // Output file path
     if (WriteBufferToFile(encryptedFilePath, payload, payloadSize) != 0) {
         free(payload);
         return -1;
